@@ -1,0 +1,10 @@
+const Edit = require("./edit");
+const editTasks = new Edit("./tasks.json");
+console.log(editTasks.add("title4", "status4"));
+console.log(editTasks.add("title5", "status5"));
+console.log(editTasks.add("title6", "status6"));
+console.log(editTasks.get(6));
+console.log(editTasks.get(5));
+console.log(editTasks.get(4));
+console.log(editTasks.remove(4));
+console.log(editTasks.get(4));
