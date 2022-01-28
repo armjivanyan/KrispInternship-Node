@@ -19,6 +19,12 @@ app.put("/add", (req, res) => {
   res.send(editTasks.add(title, status));
 });
 
+app.put("/update/:id", (req, res) => {
+  const { id } = req.params;
+  const { title, status } = req.body;
+  res.send(editTasks.change(id, title, status));
+});
+
 app.delete("/remove/:id", (req, res) => {
   const { id } = req.params;
   res.send(editTasks.remove(id));

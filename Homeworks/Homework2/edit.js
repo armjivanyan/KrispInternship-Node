@@ -61,6 +61,22 @@ class Edit {
     }
     return "not found";
   }
+
+  change(id, title, status) {
+    for (let i in this.data) {
+      if (this.data[i].id == id) {
+        if (title) {
+          this.data[i].title = title;
+        }
+        if (status) {
+          this.data[i].status = status;
+        }
+        this.update();
+        return `task with id ${id} was updated successfully`;
+      }
+    }
+    return "not found";
+  }
 }
 
 module.exports = Edit;
