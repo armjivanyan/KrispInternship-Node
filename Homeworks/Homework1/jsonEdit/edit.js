@@ -35,11 +35,13 @@ class Edit {
       status,
     });
     this.update();
+    return `task with title ${title} was added successfully`;
   }
 
   get(id) {
     for (let element of this.data) {
-      if (element.id === id) {
+      console.log(element.id);
+      if (element.id == id) {
         return element;
       }
     }
@@ -48,9 +50,10 @@ class Edit {
 
   remove(id) {
     for (let i in this.data) {
-      if (this.data[i].id === id) {
+      if (this.data[i].id == id) {
         this.data.splice(i, 1);
-        return this.update();
+        this.update();
+        return `task with id ${id} was removed successfully`;
       }
     }
     return "not found";
