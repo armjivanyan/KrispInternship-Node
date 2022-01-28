@@ -39,6 +39,9 @@ class Edit {
   }
 
   get(id) {
+    if (!id) {
+      return this.data;
+    }
     for (let element of this.data) {
       console.log(element.id);
       if (element.id == id) {
